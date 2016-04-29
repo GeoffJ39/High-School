@@ -1,3 +1,3 @@
 # Squidder
 
-Suri , Zhuoen, Geoff
+Surin , Zhuoen, Geoffrey

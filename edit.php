@@ -11,9 +11,6 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-	<!-- MetisMenu CSS -->
-    <link href="metisMenu.min.css" rel="stylesheet">
-
 	<style>
 		.table-hover tbody tr:hover td {
 		    background: lightgray;
@@ -22,98 +19,72 @@
 
 	<body>
 
-		<div class="col-md-3">
-			<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-	            <div class="navbar-header">
-	                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-	                    <span class="sr-only">Toggle navigation</span>
-	                    <span class="icon-bar"></span>
-	                    <span class="icon-bar"></span>
-	                    <span class="icon-bar"></span>
-	                </button>
-	                <a class="navbar-brand" href="index.html">
-	                	<?php
-	                	require("common.php"); 
-		                $arr = array_values($_SESSION['user']);
-						echo "Welcome, " . $arr[1];
-						?>			
-					</a>
-	            </div>
+		<nav class="navbar navbar-default navbar-fixed-top">
+		  <div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon glyphicon-tint" aria-hidden="true"></span> Symbols</a>
+		    </div>
 
-	            <div class="navbar-default sidebar" role="navigation">
-	                <div class="sidebar-nav navbar-collapse">
-	                    <ul class="nav" id="side-menu">
-	                        <br><br>
-	                        <li>
-	                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Examples</a>
-	                        </li>
-	                        <li>
-	                            <a href="#"><i class="fa fa-book fa-fw"></i> Common Codes<span class="fa arrow"></span></a>
-	                            <ul class="nav nav-second-level">
-	                                <li>
-	                                    <a href="morse.html"><i class="fa fa-ellipsis-v fa-fw"></i>Morse Code</a>
-	                                </li>
-	                                <li>
-	                                    <a href="binary.html"><i class="fa fa-power-off fa-fw"></i>Binary</a>
-	                                </li>
-	                            </ul>
-	                            <!-- /.nav-second-level -->
-	                        </li>
-	                        <li>
-	                            <a href="leet.html"><i class="fa fa-at fa-fw"></i> Leet</a>
-	                        </li>
-	                        <li>
-	                            <a href="emoji.html"><i class="fa fa-smile-o fa-fw"></i> Emoji</a>
-	                        </li>
-	                        <li>
-	                            <a href="vowel.html"><i class="fa fa-font fa-fw"></i> No Vowels</a>
-	                        </li>
-	                        <li>
-	                            <a href="#"><i class="fa fa-child fa-fw"></i> Personalities<span class="fa arrow"></span></a>
-	                            <ul class="nav nav-second-level">
-	                                <li>
-	                                    <a href="gangsta.html">Gangsta Talk</a>
-	                                </li>
-	                                <li>
-	                                    <a href="pirate.html">Pirate Speak</a>
-	                                </li>
-	                                <li>
-	                                    <a href="big.html">Big Words</a>
-	                                </li>
-	                                <li>
-	                                    <a href="typography.html">Typography</a>
-	                                </li>
-	                                <li>
-	                                    <a href="icons.html"> Icons</a>
-	                                </li>
-	                                <li>
-	                                    <a href="grid.html">Grid</a>
-	                                </li>
-	                            </ul>
-	                        </li>
-	                        <li>
-	                            <a href="custom.html"><i class="fa fa-gear fa-fw"></i> Custom Dictionary</a>
-	                        </li>
-	                    </ul>
-	                </div>
-	                <!-- /.sidebar-collapse -->
-	            </div>
-	            <!-- /.navbar-static-side -->
-	        </nav>
-		</div>
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		        <li class="active"><a href="login.php">Login <span class="sr-only">(current)</span></a></li>
+		        <li><a href="register.php">Register</a></li>
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="#">Action</a></li>
+		            <li><a href="#">Another action</a></li>
+		            <li><a href="#">Something else here</a></li>
+		            <li role="separator" class="divider"></li>
+		            <li><a href="#">Separated link</a></li>
+		            <li role="separator" class="divider"></li>
+		            <li><a href="#">One more separated link</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		      <form class="navbar-form navbar-left" role="search">
+		        <div class="input-group">
+					<div class="input-group">
+					  <input type="text" class="form-control" placeholder="Search">
+					  <div class="input-group-btn">
+					  <input type="submit" class="btn btn-success">
+					  </div>
+					</div>
+		    	</div>
+		      </form>
+		      <form class="navbar-form navbar-right" action="logout.php" method="post">
+		      	<button class="btn btn-warning">Sign out</button>
+		      </form>
+		      <ul class="nav navbar-nav navbar-right">
+		        <li>
+		        	<?php
+		        	require("common.php"); 
+		            $arr = array_values($_SESSION['user']);
+					echo "<a href='#'>Welcome, " . $arr[1] . "</a>";
+					?>	
+				</li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
 
 
 
 
-	<div class="col-md-9">
-
-		<div class="row">
-	        <div class="col-lg-12">
-	            <h1 class="page-header">Welcome to the Database</h1>
-	        </div>
-	    </div>
+	<div class="col-md-9" padding='150px'>
+		<br><br><br><br>
 	    
-
+	    <!--===================================================-->
+		<!-- This is the HTML form that appears in the browser -->
+		<!--===================================================-->
 		<div class="panel panel-success">
 			<div class="panel-heading">
 				<h3 class="panel-title">Entry Submission</h3>
@@ -138,9 +109,13 @@
 		</div>
 	    </form>
 
-			</div>
 		</div>
+		</div>
+		<!-- End of the HTML form that appears in the browser -->
 
+		<!--==========================-->
+		<!-- This is the second panel -->
+		<!--==========================-->
 		<div class="panel panel-success">
 			<div class="panel-heading">
 				<h3 class="panel-title">Database Entries & Submission</h3>
@@ -183,8 +158,8 @@
     	} 
 		
 		// To access $_SESSION['user'] values put in an array, show user his username
-		$arr = array_values($_SESSION['user']);
-		echo "Welcome, " . $arr[1];
+		// $arr = array_values($_SESSION['user']);
+		// echo "Welcome, " . $arr[1];
 
 		// open connection
 		$connection = mysql_connect($host, $username, $password) or die ("Unable to connect!");
@@ -209,7 +184,7 @@
 				echo "<td>".$row[0]."</td>";
         		echo "<td>" . $row[1]."</td>";
         		echo "<td>".$row[2]."</td>";
-				echo "<td><a href=".$_SERVER['PHP_SELF']."?id=".$row[0].">Delete</a></td>";
+				echo "<td><a href=".$_SERVER['PHP_SELF']."?id=".$row[0]." class='btn btn-danger'>Delete</a></td>";
         		echo "</tr>";
     		}
 		    echo "</table>";
@@ -260,21 +235,9 @@
 	?>
 
 	</div>
+	<!-- End of the second panel -->
 
-    
-    <!-- This is the HTML form that appears in the browser -->
-   	<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-    	Country: <input type="text" name="country">
-    	National animal: <input type="text" name="animal">
-    	<input type="submit" name="submit">
-    </form>
-    <form action="logout.php" method="post"><button>Log out</button></form>
-
-    <!-- jQuery -->
-    <script src="jquery.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="metisMenu.min.js"></script>
+	<div class="alert alert-success" role="alert">Yay!</div>
     
 	</body>
 </html>
